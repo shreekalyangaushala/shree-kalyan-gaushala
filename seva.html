@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>गौ सेवा/दान - श्री कल्याण गौशाला</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="seva.css"> </head>
+<body class="seva-page">
+
+    <header>
+        <div class="logo">
+        <a href="index.html" class="logo-link">
+            <img src="images/logo.png" alt="श्री कल्याण गौशाला लोगो" class="header-logo">
+            <span class="logo-text">श्री कल्याण गौशाला</span> 
+        </a>
+    </div>
+        <nav>
+            <a href="index.html">होम</a>
+            <a href="seva.html" class="active">गौ सेवा/दान</a>
+            <a href="products.html">उत्पाद</a>
+            <a href="gallery.html">गैलरी</a>
+            <a href="about.html">हमारे बारे में</a>
+            <a href="contact.html" class="cta-btn">संपर्क करें</a>
+        </nav>
+    </header>
+
+    <main class="donation-main-content">
+        <h1>गौ सेवा परमो धर्मः</h1>
+        <p class="intro-text">आपका छोटा सा दान भी गौशाला में गौवंश के चारे, चिकित्सा और संरक्षण में बड़ा योगदान देता है।</p>
+        
+        <section class="donation-options-grid">
+            
+            <div class="donation-card qr-card">
+                <h2>UPI द्वारा दान करें (सबसे आसान)</h2>
+                <div class="qr-code-box">
+                    <img src="images/QR-code.png" alt="श्री कल्याण गौशाला UPI QR Code">
+                    <p class="upi-id">UPI ID: shreekalyan@bank</p>
+                </div>
+                <p class="note">आप Google Pay, PhonePe, Paytm या किसी भी UPI ऐप से स्कैन करके दान कर सकते हैं।</p>
+            </div>
+
+            <div class="donation-card bank-card">
+                <h2>बैंक खाता विवरण</h2>
+                <p class="bank-note">सीधा बैंक ट्रांसफर करने के लिए नीचे दिए गए विवरण का उपयोग करें:</p>
+                
+                <div class="account-details">
+                    <div class="detail-row">
+                        <strong>बैंक का नाम:</strong>
+                        <span>Bank of India</span>
+                    </div>
+                    <div class="detail-row">
+                        <strong>खाता संख्या (A/C):</strong>
+                        <span>749610210000079</span>
+                        <button class="copy-btn" data-copy="749610210000079">Copy</button>
+                    </div>
+                    <div class="detail-row">
+                        <strong>खाताधारक का नाम:</strong>
+                        <span>SHREE KALYAN GAUSHALA SEVA SAMITI</span>
+                    </div>
+                    <div class="detail-row">
+                        <strong>IFSC कोड:</strong>
+                        <span>BKID0007496</span>
+                        <button class="copy-btn" data-copy="BKID0007496">Copy</button>
+                    </div>
+                    <div class="detail-row">
+                        <strong>शाखा (Branch):</strong>
+                        <span>ACHARAWALA</span>
+                    </div>
+                </div>
+                
+                <p class="final-note">दान के बाद, कृपया हमें संपर्क करें ताकि हम आपको रसीद भेज सकें।</p>
+            </div>
+            
+        </section>
+
+        <section class="impact-section">
+            <h2>आपके दान का प्रभाव</h2>
+            <ul>
+                <li>₹500: एक दिन के लिए 5 बीमार गौवंश का चारा और दवा।</li>
+                <li>₹1500: गौशाला में एक बछड़े की मासिक देखभाल।</li>
+                <li>₹5000: किसी गंभीर रूप से बीमार गौमाता की चिकित्सा सर्जरी का खर्च।</li>
+            </ul>
+        </section>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2026 श्री कल्याण गौशाला। सर्वाधिकार सुरक्षित। | "गो सेवा परमो धर्मः"</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/अपनी_फेसबुक_लिंक" target="_blank">फेसबुक</a> | 
+            <a href="https://www.instagram.com/shree_kalyan_goshala?igsh=MXJqM2IwNXR2aXgyNA==" target="_blank">इंस्टाग्राम</a>
+        </div>
+    </footer>
+    
+    <script>
+        document.querySelectorAll('.copy-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const textToCopy = button.getAttribute('data-copy');
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    button.textContent = 'Copied!';
+                    setTimeout(() => {
+                        button.textContent = 'Copy';
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Could not copy text: ', err);
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

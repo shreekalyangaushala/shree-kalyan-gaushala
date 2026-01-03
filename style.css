@@ -1,0 +1,892 @@
+/* सामान्य स्टाइल और फॉन्ट सेटिंग्स */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f8f8f8; /* हल्का ऑफ-व्हाइट बैकग्राउंड */
+    color: #333;
+    
+}
+
+h1, h2, h3 {
+    margin: 0;
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 1. HEADER / NAVIGATION BAR */
+header {
+    background-color: #19023d; 
+    color: white;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+   
+}
+
+.logo-link {
+    display: flex; /* इमेज और टेक्स्ट को एक ही लाइन में लाने के लिए */
+    align-items: center; /* तत्वों को वर्टिकल रूप से केंद्र में लाने के लिए */
+    text-decoration: none;
+    color: #0b2f56; /* टेक्स्ट का रंग */
+}
+
+.logo img.header-logo {
+   height: 50px; 
+    width: auto;
+    display: block;
+    margin-right: 10px;
+}
+
+.logo-text {
+  font-size: 22px; 
+    font-weight: 700;
+    color: #c94c03;
+}
+
+/* अगर आप चाहते हैं कि जब कोई लोगो पर होवर करे तो टेक्स्ट का रंग बदले */
+.logo-link:hover .logo-text {
+    color: white; 
+}
+
+nav a {
+    margin-left: 25px;
+    font-size: 18px;
+    padding: 5px 10px;
+    transition: color 0.3s;
+}
+
+nav a:hover, nav a.active {
+    color: #ffaa33; /* होवर पर रंग बदलें */
+}
+
+.cta-btn {
+    background-color: #28a745; /* हरा बटन */
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.cta-btn:hover {
+    background-color: #1e7e34;
+    color: white;
+}
+
+/* 2. HERO SECTION */
+.hero-section {
+    background: url('hero-background.jpg') no-repeat center center/cover; /* यहाँ गाय और गौशाला की पृष्ठभूमि इमेज डालें */
+    background-color: #f7e1b5; /* वैकल्पिक रंग यदि इमेज न हो */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #eff1f4; /* गहरे नीले रंग का टेक्स्ट */
+    position: relative;
+    padding: 20px;
+    background-image: url("images/bgimage.png");
+    background-size: cover;
+    background-position: center;
+    /* height: 57vh; */
+}
+
+/* हीरो सेक्शन को सुंदर बनाने के लिए ओवरले */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* हल्की परत ताकि टेक्स्ट साफ दिखे */
+    background: rgba(112, 109, 109, 0.45); 
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+    color: #c94c03; /* केसरिया */
+}
+
+.hero-content h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.main-cta {
+    display: inline-block;
+    background-color: #c94c03; /* गहरा केसरिया */
+   
+    color: white;
+    padding: 15px 30px;
+    margin-top: 20px;
+    font-size: 18px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.main-cta:hover {
+    background-color: #a03c00;
+    transform: scale(1.05);
+}
+
+/* 3. HIGHLIGHTS SECTION */
+.highlights {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 5%;
+    gap: 20px;
+    background-color: rgb(215, 210, 210);
+    text-align: center;
+}
+
+.highlight-card {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s;
+}
+
+.highlight-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.highlight-card h3 {
+    color: #0b2f56; /* गहरा नीला */
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+/* 4. FOOTER */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+}
+
+footer a {
+    color: #ffaa33;
+    margin: 0 10px;
+}
+
+/* RESPONSIVE DESIGN के लिए बेसिक मीडिया क्वेरी */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    nav {
+        margin-top: 10px;
+    }
+    nav a {
+        margin: 0 8px;
+        font-size: 16px;
+        display: inline-block;
+    }
+    .hero-content h1 {
+        font-size: 40px;
+    }
+    .highlights {
+        flex-direction: column;
+    }
+    .highlight-card {
+        margin-bottom: 15px;
+    }
+}
+
+
+
+/* ================================== */
+/* GALLERY PAGE SPECIFIC STYLES (गैलरी पेज स्टाइल) */
+/* ================================== */
+
+.gallery-main-content {
+    padding: 40px 5%;
+    text-align: center;
+}
+
+.gallery-main-content h1 {
+    color: #0b2f56; /* गहरा नीला */
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.gallery-intro {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* **ग्रिड लेआउट** */
+.image-grid {
+    display: grid;
+    /* तीन कॉलम (3 columns) के लिए सेटअप, स्क्रीन छोटी होने पर कम होंगे */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 20px; /* तस्वीरों के बीच की दूरी */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.image-item {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.image-item:hover {
+    transform: translateY(-5px); /* होवर करने पर थोड़ा ऊपर उठे */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.image-item img {
+    width: 100%;
+    height: 250px; /* एक जैसी ऊँचाई */
+    object-fit: cover; /* इमेज को बिना विकृत किए फ़िट करें */
+    display: block;
+}
+
+.caption {
+    padding: 15px 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #0b2f56;
+}
+
+/* **मोबाइल के लिए** */
+@media (max-width: 600px) {
+    .image-grid {
+        grid-template-columns: 1fr; /* मोबाइल पर सिंगल कॉलम */
+    }
+}
+
+/* style.css में यह नया कोड जोड़ें */
+.video-grid-item video {
+    width: 100%;
+    /* वीडियो की ऊँचाई को तस्वीरों के समान सेट करें */
+    height: 250px; 
+    object-fit: cover; /* ताकि वीडियो कंटेनर में अच्छी तरह से फिट हो जाए */
+    display: block;
+}
+
+/* ================================== */
+/* DONATION (SEVA) PAGE STYLES */
+/* ================================== */
+
+
+.donation-main-content {
+    padding: 40px 5%;
+    text-align: center;
+    background-color: white;
+}
+
+.donation-main-content h1 {
+    color: #c94c03; /* गहरा केसरिया */
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+.intro-text {
+    font-size: 18px;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.donation-options-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 50px;
+    flex-wrap: wrap; /* मोबाइल पर कार्ड्स को नीचे आने दें */
+}
+
+.donation-card {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+    text-align: left;
+}
+
+.donation-card h2 {
+    color: #0b2f56;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #ffaa33;
+    padding-bottom: 10px;
+    font-size: 24px;
+    text-align: center;
+}
+
+/* QR Code Section Styling */
+.qr-code-box {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.qr-code-box img {
+    max-width: 200px; /* QR कोड का साइज़ */
+    height: auto;
+    border: 5px solid #0b2f56;
+    border-radius: 5px;
+}
+
+.upi-id {
+    font-weight: 600;
+    margin-top: 10px;
+    font-size: 18px;
+    color: #c94c03;
+}
+
+.note {
+    text-align: center;
+    font-style: italic;
+    color: #777;
+    margin-top: 20px;
+}
+
+/* Bank Details Styling */
+.account-details {
+    margin-top: 20px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px dashed #eee;
+    align-items: center;
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+.detail-row strong {
+    color: #0b2f56;
+    font-weight: 700;
+}
+
+.detail-row span {
+    font-family: monospace; /* नंबर साफ दिखें */
+    font-size: 17px;
+}
+
+.copy-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.copy-btn:hover {
+    background-color: #1e7e34;
+}
+
+.final-note {
+    margin-top: 25px;
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ffeeba;
+    text-align: center;
+}
+
+/* Impact Section */
+.impact-section {
+    padding: 40px;
+    background-color: #e9f7e7; /* हल्का हरा रंग */
+    border-radius: 10px;
+    max-width: 900px;
+    margin: 40px auto;
+    text-align: left;
+}
+
+.impact-section h2 {
+    text-align: center;
+    color: #28a745;
+    margin-bottom: 20px;
+}
+
+.impact-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.impact-section ul li {
+    background: url('path-to-your-icon.png') no-repeat left center; /* यहां एक छोटा चेक मार्क आइकॉन डाल सकते हैं */
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2328a745"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>') no-repeat left 8px;
+    background-size: 20px;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    font-size: 17px;
+    border-bottom: 1px dotted #ddd;
+    padding-bottom: 10px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .donation-options-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .donation-card {
+        max-width: 100%;
+    }
+}
+
+
+/* ================================== */
+/* ABOUT PAGE STYLES */
+/* ================================== */
+
+.about-main-content {
+    padding: 40px 5%;
+    text-align: center;
+    background-color: #fcfcfc;
+}
+
+.about-main-content h1 {
+    color: #0b2f56;
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+.about-intro {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 50px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Vision Mission Section */
+.vision-mission-section {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 60px;
+    padding: 30px 0;
+    border-bottom: 1px solid #eee;
+    flex-wrap: wrap;
+}
+
+.mission-item {
+    max-width: 450px;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.mission-item h2 {
+    color: #c94c03;
+    margin-bottom: 10px;
+}
+
+.icon-saffron {
+    color: #ffaa33; /* हल्का केसरिया */
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+/* Timeline Section */
+.timeline-section {
+    margin-bottom: 60px;
+    padding: 30px 0;
+}
+
+.timeline-section h2 {
+    color: #0b2f56;
+    margin-bottom: 40px;
+    font-size: 32px;
+}
+
+.timeline-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Timeline horizontal line */
+.timeline-box::before {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: #ffaa33;
+    z-index: 0;
+}
+
+.timeline-event {
+    width: 30%; /* 3 इवेंट्स के लिए */
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.date-circle {
+    width: 70px;
+    height: 70px;
+    background-color: #0b2f56;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 auto 20px auto;
+    border: 5px solid #fff;
+    box-shadow: 0 0 0 3px #c94c03; /* केसरिया रिंग */
+}
+
+.timeline-event h3 {
+    color: #c94c03;
+    margin-bottom: 10px;
+}
+
+.timeline-event p {
+    font-size: 15px;
+    color: #666;
+}
+
+/* Stats Section */
+.stats-section {
+    background-color: #e9f7e7; /* हल्का हरा */
+    padding: 40px 5%;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 10px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 15px;
+}
+
+.stat-item i {
+    font-size: 40px;
+    color: #28a745; /* हरा */
+    margin-bottom: 10px;
+}
+
+.stat-number {
+    font-size: 36px;
+    font-weight: 700;
+    color: #0b2f56;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 16px;
+    color: #555;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+/* Mobile Responsiveness for Timeline */
+@media (max-width: 768px) {
+    .timeline-box {
+        flex-direction: column;
+        align-items: center;
+        /* Vertical line for mobile */
+        width: 3px;
+        margin: 0 auto;
+    }
+
+    .timeline-box::before {
+        left: 50%;
+        width: 3px;
+        height: 100%;
+        top: 0;
+    }
+
+    .timeline-event {
+        width: 90%;
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+    
+    .date-circle {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .vision-mission-section {
+        flex-direction: column;
+    }
+
+    .stats-section {
+        flex-direction: column;
+    }
+    
+    .stat-item {
+        margin-bottom: 20px;
+    }
+}
+
+
+/* ================================== */
+/* 9. CONTACT PAGE STYLES (contact.html) */
+/* ================================== */
+
+.contact-main-content {
+    padding: 40px 5%;
+    background-color: #fcfcfc;
+}
+
+.contact-main-content h1 {
+    text-align: center;
+    color: #0b2f56;
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+.contact-intro {
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 50px;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto 50px auto;
+}
+
+.contact-details {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Contact Details (Wide Style - since form is removed) */
+.contact-details.wide-details {
+    flex: none;
+    width: 100%;
+    max-width: 650px; 
+    margin: 0 auto; 
+    text-align: left;
+}
+
+.contact-details h2 {
+    color: #c94c03;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #ffaa33;
+    padding-bottom: 10px;
+}
+
+.detail-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.detail-item i {
+    font-size: 24px;
+    margin-right: 20px;
+    min-width: 24px;
+    color: #0b2f56;
+}
+
+.detail-item p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.detail-item a {
+    color: #0b2f56;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.social-contact {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.social-contact a {
+    font-size: 28px;
+    color: #0b2f56;
+    margin: 0 10px;
+}
+
+.social-contact a:hover {
+    color: #c94c03;
+}
+
+/* Map Section */
+.map-section {
+    margin-top: 50px;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.map-section h2 {
+    color: #0b2f56;
+    margin-bottom: 25px;
+    font-size: 32px;
+}
+
+.map-note {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.map-embed {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* MOBILE RESPONSIVENESS for Contact Page */
+
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .contact-details.wide-details {
+        max-width: 100%;
+    }
+    
+    .detail-group {
+        grid-template-columns: 1fr; 
+    }
+}
+
+
+
+/* ================================================= */
+/* 5. PRODUCT PAGE STYLES (products.html) */
+/* ================================================= */
+
+.products-page-content {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.product-listing {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap; /* अगर भविष्य में और उत्पाद जोड़ें तो रैप हो जाएंगे */
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.product-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    width: 300px; 
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; /* इमेज को कार्ड में फिट करेगा */
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product-info h3 {
+    color: #0b2f56;
+    margin-top: 0;
+    font-size: 20px;
+}
+
+.product-description {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+    min-height: 60px; /* डिस्क्रिप्शन के लिए जगह फिक्स करें */
+}
+
+.product-price {
+    font-size: 18px;
+    font-weight: 700;
+    color: #c94c03;
+    margin-bottom: 15px;
+}
+
+.buy-btn {
+    display: inline-block;
+    background-color: #c94c03;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.buy-btn:hover {
+    background-color: #a83e00;
+}
