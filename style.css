@@ -28,6 +28,7 @@ header {
     background-color: #19023d; 
     color: white;
     padding: 15px 5%;
+     min-height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -88,20 +89,17 @@ nav a:hover, nav a.active {
 
 /* 2. HERO SECTION */
 .hero-section {
-    background: url('hero-background.jpg') no-repeat center center/cover; /* यहाँ गाय और गौशाला की पृष्ठभूमि इमेज डालें */
-    background-color: #f7e1b5; /* वैकल्पिक रंग यदि इमेज न हो */
-    height: 100vh;
+    min-height: calc(100vh - 80px); /* header ki height minus */
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: #eff1f4; /* गहरे नीले रंग का टेक्स्ट */
+    color: #eff1f4;
     position: relative;
-    padding: 20px;
+    padding: 40px 20px;
     background-image: url("images/bgimage.png");
     background-size: cover;
     background-position: center;
-    /* height: 57vh; */
 }
 
 /* हीरो सेक्शन को सुंदर बनाने के लिए ओवरले */
@@ -117,19 +115,22 @@ nav a:hover, nav a.active {
 }
 
 .hero-content {
-    position: relative;
+   position: relative;
     z-index: 10;
-    max-width: 800px;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 .hero-content h1 {
-    font-size: 50px;
+    font-size: 44px;
     margin-bottom: 10px;
     color: #c94c03; /* केसरिया */
 }
 
 .hero-content h2 {
-    font-size: 30px;
+    font-size: 26px;
     margin-bottom: 20px;
 }
 
@@ -198,25 +199,69 @@ footer a {
 @media (max-width: 768px) {
     header {
         flex-direction: column;
+        padding: 12px 10px;
         text-align: center;
     }
+    .logo-link {
+        justify-content: center;
+        margin-bottom: 10px;
+    }
     nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
         margin-top: 10px;
     }
     nav a {
-        margin: 0 8px;
-        font-size: 16px;
-        display: inline-block;
+        margin: 0;
+        font-size: 15px;
+        padding: 6px 10px;
+
     }
+    .cta-btn {
+        width: 90%;
+        text-align: center;
+    }
+    .hero-section {
+        min-height: auto;
+        padding: 120px 15px 80px;
+    }
+
     .hero-content h1 {
-        font-size: 40px;
+        font-size: 28px;
     }
+
+    .hero-content h2 {
+        font-size: 18px;
+    }
+
+    .hero-content p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+        .main-cta {
+        font-size: 16px;
+        padding: 12px 24px;
+    }
+
+    /* HIGHLIGHTS */
     .highlights {
         flex-direction: column;
+        padding: 25px 15px;
     }
+
     .highlight-card {
+        width: 100%;
         margin-bottom: 15px;
     }
+
+    /* FOOTER */
+    footer {
+        padding: 20px 10px;
+        font-size: 13px;
+    }
+
 }
 
 
@@ -246,7 +291,7 @@ footer a {
 .image-grid {
     display: grid;
     /* तीन कॉलम (3 columns) के लिए सेटअप, स्क्रीन छोटी होने पर कम होंगे */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
     gap: 20px; /* तस्वीरों के बीच की दूरी */
     max-width: 1200px;
     margin: 0 auto;
@@ -265,12 +310,7 @@ footer a {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-.image-item img {
-    width: 100%;
-    height: 250px; /* एक जैसी ऊँचाई */
-    object-fit: cover; /* इमेज को बिना विकृत किए फ़िट करें */
-    display: block;
-}
+
 
 .caption {
     padding: 15px 10px;
@@ -280,18 +320,30 @@ footer a {
 }
 
 /* **मोबाइल के लिए** */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .image-grid {
         grid-template-columns: 1fr; /* मोबाइल पर सिंगल कॉलम */
+    }
+    .gallery-main-content h1 {
+        font-size: 28px;
+    }
+
+    .gallery-intro {
+        font-size: 16px;
+    }
+
+    .caption {
+        font-size: 15px;
     }
 }
 
 /* style.css में यह नया कोड जोड़ें */
-.video-grid-item video {
+
+.image-item img,
+.image-item video {
     width: 100%;
-    /* वीडियो की ऊँचाई को तस्वीरों के समान सेट करें */
-    height: 250px; 
-    object-fit: cover; /* ताकि वीडियो कंटेनर में अच्छी तरह से फिट हो जाए */
+    height: 250px;
+    object-fit: cover;
     display: block;
 }
 
@@ -301,11 +353,11 @@ footer a {
 
 
 .donation-main-content {
-    padding: 40px 5%;
+    padding: 50px 5% 40px;
     text-align: center;
     background-color: white;
 }
-
+  
 .donation-main-content h1 {
     color: #c94c03; /* गहरा केसरिया */
     font-size: 40px;
@@ -314,7 +366,7 @@ footer a {
 
 .intro-text {
     font-size: 18px;
-    color: white;
+    color: #555;
     margin-bottom: 40px;
 }
 
@@ -397,16 +449,20 @@ footer a {
 .detail-row span {
     font-family: monospace; /* नंबर साफ दिखें */
     font-size: 17px;
+    word-break: break-all;  /* long numbers mobile pe break honge */
+    text-align: right;     /* layout clean rahega */
 }
 
 .copy-btn {
     background-color: #28a745;
     color: white;
     border: none;
-    padding: 5px 10px;
+    padding: 6px 12px;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin-left: 10px;     /* text se gap (important) */
+    white-space: nowrap;   /* button text break na ho */
 }
 
 .copy-btn:hover {
@@ -460,10 +516,30 @@ footer a {
     .donation-options-grid {
         flex-direction: column;
         gap: 20px;
+        align-items: center; /* cards center me rahenge */
     }
     .donation-card {
         max-width: 100%;
+        padding: 20px;       /* mobile pe thoda compact */
     }
+     /* Typography */
+    .donation-main-content h1 {
+        font-size: 28px;
+    }
+    .intro-text {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+
+    .donation-card h2 {
+        font-size: 20px;
+    }
+
+    .impact-section {
+        padding: 25px 15px;
+    }
+
+
 }
 
 
@@ -625,44 +701,115 @@ footer a {
 }
 
 /* Mobile Responsiveness for Timeline */
+
 @media (max-width: 768px) {
+
+    /* Main container */
+    .about-main-content {
+        padding: 30px 15px;
+        text-align: center;
+    }
+
+    .about-main-content h1 {
+        font-size: 28px;
+        line-height: 1.3;
+    }
+
+    .about-intro {
+        font-size: 16px;
+        margin-bottom: 35px;
+    }
+
+    /* Vision / Mission */
+    .vision-mission-section {
+        flex-direction: column;
+        gap: 25px;
+        padding: 20px 0;
+    }
+
+    .mission-item {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .mission-item h2 {
+        font-size: 20px;
+    }
+
+    /* Timeline */
+    .timeline-section {
+        padding: 20px 0;
+    }
+
+    .timeline-section h2 {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
     .timeline-box {
+        position: relative;
+        display: flex;
         flex-direction: column;
         align-items: center;
-        /* Vertical line for mobile */
-        width: 3px;
-        margin: 0 auto;
+        width: 100%;
     }
 
     .timeline-box::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
         left: 50%;
         width: 3px;
-        height: 100%;
-        top: 0;
+        background-color: #ffaa33;
+        transform: translateX(-50%);
     }
 
     .timeline-event {
-        width: 90%;
+        width: 100%;
+        max-width: 500px;
+        background: #ffffff;
         padding: 20px;
-        margin-bottom: 30px;
+        margin-bottom: 35px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        text-align: center;
+        position: relative;
+        z-index: 2;
     }
-    
+
     .date-circle {
-        margin-left: 0;
-        margin-right: 0;
+        margin: 0 auto 15px auto;
     }
 
-    .vision-mission-section {
-        flex-direction: column;
+    .timeline-event h3 {
+        font-size: 18px;
     }
 
+    .timeline-event p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    /* Stats section */
     .stats-section {
         flex-direction: column;
+        padding: 30px 15px;
+        gap: 20px;
     }
-    
-    .stat-item {
-        margin-bottom: 20px;
+
+    .stat-item i {
+        font-size: 34px;
     }
+
+    .stat-number {
+        font-size: 30px;
+    }
+
+    .stat-label {
+        font-size: 15px;
+    }
+
 }
 
 
@@ -671,7 +818,7 @@ footer a {
 /* ================================== */
 
 .contact-main-content {
-    padding: 40px 5%;
+    padding: 50px 5% 40px;
     background-color: #fcfcfc;
 }
 
@@ -757,8 +904,8 @@ footer a {
 }
 
 .social-contact a {
-    font-size: 28px;
-    color: #0b2f56;
+    font-size: 32px;
+    color:  #25D366;
     margin: 0 10px;
 }
 
@@ -791,23 +938,61 @@ footer a {
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
+.map-embed iframe {
+    width: 100%;
+    height: 350px;
+    border: 0;
+}
 
 /* MOBILE RESPONSIVENESS for Contact Page */
 
 @media (max-width: 768px) {
+
+    /* Page padding */
+    .contact-main-content {
+        padding: 30px 15px;
+    }
+
+    /* Heading */
+    .contact-main-content h1 {
+        font-size: 28px;
+    }
+
+    .contact-intro {
+        font-size: 16px;
+        margin-bottom: 35px;
+    }
+
+    /* Layout */
     .contact-container {
         flex-direction: column;
         gap: 30px;
     }
-    
+
     .contact-details.wide-details {
         max-width: 100%;
+        padding: 20px;
     }
-    
+
+    /* Contact details grid */
     .detail-group {
         grid-template-columns: 1fr; 
     }
+
+    .detail-item p {
+        font-size: 15px;
+    }
+
+    /* Map */
+    .map-section h2 {
+        font-size: 24px;
+    }
+
+    .map-embed iframe {
+        height: 300px;
+    }
 }
+
 
 
 
@@ -819,6 +1004,7 @@ footer a {
     padding: 40px 0;
     text-align: center;
 }
+
 
 .product-listing {
     max-width: 1200px;
@@ -893,4 +1079,9 @@ footer a {
 
 .buy-btn:hover {
     background-color: #a83e00;
+}
+@media (max-width: 768px) {
+    .product-description {
+        min-height: auto;
+    }
 }
