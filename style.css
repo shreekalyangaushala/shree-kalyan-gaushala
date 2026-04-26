@@ -25,7 +25,7 @@ a {
 
 /* 1. HEADER / NAVIGATION BAR */
 header {
-    background-color: #19023d; 
+    background-color:rgb(1, 58, 1); 
     color: white;
     padding: 15px 5%;
      min-height: 80px;
@@ -1084,4 +1084,20 @@ footer a {
     .product-description {
         min-height: auto;
     }
+}
+
+
+.pay-btn {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.pay-btn:hover {
+    background-color: #218838;
 }
